@@ -1,10 +1,13 @@
-import './App.css';
-import Page from './Pages/Page';
+import "./App.css";
+import Page from "./Pages/Page";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Page />
+      <BrowserRouter>
+        <Page />
+      </BrowserRouter>
     </div>
   );
 }
