@@ -8,11 +8,7 @@ function Appear({ children }) {
     target: targerRef,
     offset: ["end end", "start end"],
   });
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.9, 1],
-    [0.1, 1, 1, 0.1]
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.9, 1], [1, 1, 1, 1]);
   return (
     <div ref={targerRef}>
       <motion.div style={{ opacity }}>{children}</motion.div>

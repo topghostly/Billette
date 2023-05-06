@@ -1,30 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
-// const Para = ({ children }) => {
-//   return (
-//     <motion.div
-//       initial={{
-//         x: 30,
-//         opacity: 0,
-//       }}
-//       animate={{
-//         x: 0,
-//         opacity: 1,
-//       }}
-//       exit={{
-//         x: -30,
-//         opacity: 0,
-//       }}
-//       transition={{
-//         duration: 0.5,
-//       }}
-//     >
-//       <h2>{children.content}</h2>
-//       <p>{children.author}</p>
-//     </motion.div>
-//   );
-// };
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
+
 function Slider() {
   const [numContent, setContent] = useState(0);
   const nextHandler = () => {
@@ -45,32 +24,32 @@ function Slider() {
   const data = [
     {
       content:
-        "Lorem, ipsum dolor sit amet consectetur hvjkadipisicing elit. Fugit velit magnam corporis alias. Deserunt, repellendus mollitia est dolore quae accusamus ad! Nesciunt est sint harum commodi dolores provident saepe odit.",
-      author: "Anthony McCopolo - CEO Mac and Cheese industry - 0",
+        "I absolutely love using Billette for all my ticket needs! The site is so easy to navigate and the ticket purchasing process is super simple. I've never had any issues with my tickets or the site itself. Highly recommend!",
+      author: "Sarah L.",
       id: 0,
     },
     {
       content:
-        "Lorem, ipsum dolor sit amet clbklonsectetur adipisicing elit. Fugit velit magnam corporis alias. Deserunt, repellendus mollitia est dolore quae accusamus ad! Nesciunt est sint harum commodi dolores provident saepe odit.",
-      author: "Anthony McCopolo - CEO Mac and Cheese industry - 1",
+        "Billette has been a lifesaver for me when it comes to buying tickets for events. The site always has the best prices and a wide selection of tickets available. Plus, their customer service is top-notch and always quick to respond to any questions I have.",
+      author: "Alex D.",
       id: 1,
     },
     {
       content:
-        "Lorem, ipsum klbldolor sit amet consectetur adipisicing elit. Fugit velit magnam corporis alias. Deserunt, repellendus mollitia est dolore quae accusamus ad! Nesciunt est sint harum commodi dolores provident saepe odit.",
-      author: "Anthony McCopolo - CEO Mac and Cheese industry - 2",
+        "I've been using Billette for years and have never been disappointed. The site is trustworthy and I always feel confident in my purchases. Their platform is user-friendly and they make it easy to find the perfect tickets for any event.",
+      author: "Michael S.",
       id: 2,
     },
     {
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit velit magnam corporis alias. Deserunt, repellendus mollitia est dolore quae accusamus ad! Nesciunt est sint harum commodi dolores provident saepe odit.",
-      author: "Anthony McCopolo - CEO Mac and Cheese industry - 3",
+        "Billette is hands down the best ticket sale site out there. I've tried using other sites in the past but Billette always has the best deals and customer service. They make it so easy to find and purchase tickets for any event. I highly recommend using Billette!",
+      author: "Ashley P.",
       id: 3,
     },
     {
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit velit magnam ;orjfwoefcorporis alias. Deserunt, repellendus mollitia est dolore quae accusamus ad! Nesciunt est sint harum commodi dolores provident saepe odit.",
-      author: "Anthony McCopolo - CEO Mac and Cheese industry - 4",
+        "I was hesitant to use Billette at first but after my first purchase, I was hooked. The site is so easy to use and their prices are unbeatable. Plus, the tickets always arrive on time and I've never had any issues with them. I would definitely recommend Billette to anyone looking for a reliable ticket sale site.",
+      author: "Kevin T.",
       id: 4,
     },
   ];
@@ -100,7 +79,7 @@ function Slider() {
           }}
           className="controls"
         >
-          prev
+          <BsFillArrowLeftCircleFill />
         </p>
         <div
           className="container-sm"
@@ -122,7 +101,7 @@ function Slider() {
           }}
           className="controls"
         >
-          next
+          <BsFillArrowRightCircleFill />
         </p>
       </div>
       <div className="new-controls">
@@ -131,7 +110,7 @@ function Slider() {
             prevHandler();
           }}
         >
-          prev
+          <BsFillArrowLeftCircleFill />
         </p>
         <p
           onClick={() => {
@@ -139,7 +118,7 @@ function Slider() {
           }}
           className="controls"
         >
-          next
+          <BsFillArrowRightCircleFill />
         </p>
       </div>
     </Slide>
@@ -151,6 +130,10 @@ const Slide = styled.div`
   max-width: 100vw;
   overflow-x: hidden;
   /* min-height: 60vw; */
+  svg {
+    scale: 2;
+    cursor: pointer;
+  }
 
   .new-controls {
     display: none;
